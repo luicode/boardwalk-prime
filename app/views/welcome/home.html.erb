@@ -1,0 +1,523 @@
+<nav class="navbar navbar-expand-lg navbar-dark bp-nav fixed-top">
+  <div class="container">
+    <a class="navbar-brand bp-brand" href="#top">
+      <span class="bp-brand-title">Boardwalk Prime</span>
+      <span class="bp-brand-sub">Steak &amp; Seafood</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bpNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="bpNav">
+      <ul class="navbar-nav ms-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#signature">Signature</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reserve">Reserve</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="bp-hero">
+  <video class="bp-hero-video" autoplay muted playsinline loop preload="metadata">
+    <source src="<%= asset_path("boardwalk-prime-hero-video-steak.mp4") %>" type="video/mp4">
+  </video>
+
+  <div class="bp-hero-overlay"></div>
+
+  <div class="container bp-hero-content">
+    <div class="bp-hero-badge bp-pill">
+      <i class="bi bi-fire"></i>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Redcliffe%20Quay%20Redcliffe%20Street%2C%20Redcliffe%20St%2C%20St%20John%27s%2C%20Antigua%20%26%20Barbuda"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bp-hero-badge-link"
+      >
+        Redcliffe Quay, Antigua
+      </a>
+    </div>
+
+    <h1 class="bp-wordmark bp-wordmark-hero" id="bpWordmark">
+      <span class="bp-wordmark-title">Boardwalk Prime</span>
+      <span class="bp-wordmark-sub">Steak &amp; Seafood</span>
+      <span class="bp-wordmark-rule" aria-hidden="true"></span>
+    </h1>
+
+    <p class="bp-lede">
+      A high-class dining experience where open flame, prime cuts, and pristine seafood meet the Caribbean night.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2 mt-4 bp-hero-actions">
+      <a class="btn btn-light bp-btn bp-hero-btn bp-pill bp-pill--cta" href="#reserve">Reserve a Table</a>
+      <a class="btn btn-outline-light bp-btn bp-hero-btn bp-pill bp-pill--cta" href="#menu">Explore Menu</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="bp-section">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h2 class="bp-h2">Welcome to Boardwalk Prime</h2>
+        <p class="bp-copy">
+          Boardwalk Prime is a refined steak and seafood destination in Antigua, crafted for celebrations,
+          late-night conversations, and unforgettable tableside moments.
+        </p>
+        <div class="bp-feature-grid">
+          <div class="bp-feature">
+            <i class="bi bi-stars"></i>
+            <div>
+              <div class="bp-feature-title">Comfort Dining</div>
+              <div class="bp-feature-sub">A classy and comfortable dining experience.</div>
+            </div>
+          </div>
+          <div class="bp-feature">
+            <i class="bi bi-droplet-half"></i>
+            <div>
+              <div class="bp-feature-title">Pristine steak & seafood</div>
+              <div class="bp-feature-sub">Serving Prime beef, raw bar, ceviche, and coastal classics.</div>
+            </div>
+          </div>
+          <div class="bp-feature">
+            <i class="bi bi-fire"></i>
+            <div>
+              <div class="bp-feature-title">Open flame craft</div>
+              <div class="bp-feature-sub">Robata char, tandoor heat, perfect sear.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="bp-card bp-image-card">
+          <div
+            class="bp-fade-carousel"
+            data-bp-fade-carousel
+            data-interval="3800"
+            aria-label="Boardwalk Prime featured dishes"
+          >
+            <%= image_tag "steak.webp", class: "img-fluid bp-round bp-fade-slide is-active", alt: "Steak" %>
+            <%= image_tag "beef.png", class: "img-fluid bp-round bp-fade-slide", alt: "Beef dish" %>
+            <%= image_tag "beef2.png", class: "img-fluid bp-round bp-fade-slide", alt: "Beef dish" %>
+            <%= image_tag "crab_cake.png", class: "img-fluid bp-round bp-fade-slide", alt: "Crab cake" %>
+            <%= image_tag "dumplings.png", class: "img-fluid bp-round bp-fade-slide", alt: "Dumplings" %>
+            <%= image_tag "edamame.png", class: "img-fluid bp-round bp-fade-slide", alt: "Edamame" %>
+            <%= image_tag "sashimi.png", class: "img-fluid bp-round bp-fade-slide", alt: "Sashimi" %>
+            <%= image_tag "skewer.png", class: "img-fluid bp-round bp-fade-slide", alt: "Skewer" %>
+            <%= image_tag "steak.png", class: "img-fluid bp-round bp-fade-slide", alt: "Steak" %>
+            <%= image_tag "sushi.png", class: "img-fluid bp-round bp-fade-slide", alt: "Sushi" %>
+            <%= image_tag "tempura.png", class: "img-fluid bp-round bp-fade-slide", alt: "Tempura" %>
+            <%= image_tag "tofu.png", class: "img-fluid bp-round bp-fade-slide", alt: "Tofu" %>
+            <%= image_tag "ice_cream.png", class: "img-fluid bp-round bp-fade-slide", alt: "Ice cream" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="bp-section bp-section-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+      <div>
+        <h2 class="bp-h2 text-white mb-2">Menu Highlights</h2>
+        <p class="bp-copy text-white-50 mb-0">
+          A curated preview from our full menu, built for shareable starts, prime cuts, and a sweet finish.
+        </p>
+      </div>
+
+      <div class="bp-tabs btn-group" role="group" aria-label="Menu tabs">
+        <% @menu_sections.each_with_index do |sec, idx| %>
+          <button
+            class="btn <%= idx == 0 ? "btn-light" : "btn-outline-light" %>"
+            type="button"
+            data-bp-tab="<%= sec[:key] %>">
+            <%= sec[:title] %>
+          </button>
+        <% end %>
+      </div>
+    </div>
+
+    <% @menu_sections.each_with_index do |sec, idx| %>
+      <div class="bp-menu-panel <%= idx == 0 ? "" : "d-none" %>" data-bp-panel="<%= sec[:key] %>">
+        <div class="row g-3">
+          <% sec[:items].each do |item| %>
+            <div class="col-md-6 col-lg-4">
+              <div class="bp-card bp-menu-item h-100">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <div class="bp-menu-title"><%= item[:name] %></div>
+                  <div class="bp-menu-price">$<%= item[:price] %></div>
+                </div>
+                <% if item[:desc].present? %>
+                  <div class="bp-menu-desc"><%= item[:desc] %></div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="text-center mt-4">
+          <a class="btn btn-outline-light bp-btn" href="#reserve">
+            Book for the full experience <i class="bi bi-arrow-right-short"></i>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section id="signature" class="bp-section">
+  <div class="container">
+    <h2 class="bp-h2 mb-2">Signature Plates</h2>
+    <p class="bp-copy mb-4">
+      Prime cuts, coastal indulgence, and crafted comfort.
+    </p>
+
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <a class="bp-photo"
+           href="#"
+           data-bs-toggle="modal"
+           data-bs-target="#bpGalleryModal"
+           data-bp-src="<%= asset_path("steak.webp") %>"
+           data-bp-title="Prime Steak">
+          <%= image_tag "steak.webp", class: "img-fluid bp-round", alt: "Steak" %>
+          <div class="bp-photo-caption">Prime Steak</div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <a class="bp-photo"
+           href="#"
+           data-bs-toggle="modal"
+           data-bs-target="#bpGalleryModal"
+           data-bp-src="<%= asset_path("crab_cake.png") %>"
+           data-bp-title="Crab Cake">
+          <%= image_tag "crab_cake.png", class: "img-fluid bp-round", alt: "Crab cake" %>
+          <div class="bp-photo-caption">Appetizers</div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <a class="bp-photo"
+           href="#"
+           data-bs-toggle="modal"
+           data-bs-target="#bpGalleryModal"
+           data-bp-src="<%= asset_path("sushi.png") %>"
+           data-bp-title="Sushi & Rolls">
+          <%= image_tag "sushi.png", class: "img-fluid bp-round", alt: "Sushi" %>
+          <div class="bp-photo-caption">Sushi & Rolls</div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <a class="bp-photo"
+           href="#"
+           data-bs-toggle="modal"
+           data-bs-target="#bpGalleryModal"
+           data-bp-src="<%= asset_path("ice_cream.png") %>"
+           data-bp-title="Ice Cream">
+          <%= image_tag "ice_cream.png", class: "img-fluid bp-round", alt: "Ice cream" %>
+          <div class="bp-photo-caption">Sweet Desserts</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve" class="bp-section bp-reserve">
+  <div class="container">
+    <div class="bp-reserve-card">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="bp-kicker">Reservations</div>
+          <h2 class="bp-reserve-title">Reserve your table</h2>
+          <p class="bp-reserve-copy mb-0">
+            Limited seating nightly. For the best tables and preferred times, we recommend booking in advance.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="bp-reserve-actions">
+            <a
+              class="btn btn-light bp-btn bp-pill bp-pill--cta bp-reserve-btn"
+              href="mailto:reservations@boardwalkprime.com?subject=Reservation%20Request"
+            >
+              Email reservations
+            </a>
+
+            <a class="btn btn-outline-light bp-btn bp-pill bp-pill--cta bp-reserve-btn" href="tel:+1268XXXXXXX">
+              <i class="bi bi-telephone"></i>
+              Call
+            </a>
+          </div>
+
+          <div class="bp-reserve-meta text-white-50">
+            <div class="bp-reserve-meta-line">
+              <span class="bp-reserve-meta-label">Location</span>
+              <span class="bp-reserve-meta-value">Redcliffe Quay, St John’s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-reserve-rule" aria-hidden="true"></div>
+
+      <div class="bp-reserve-fineprint text-white-50">
+        For large parties or private dining, email us with your preferred date, time, and party size.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bp-footer" role="contentinfo">
+  <div class="container">
+    <div class="bp-footer-top">
+      <div class="bp-footer-brand">
+        <div class="bp-footer-mark">
+          <div class="bp-footer-title">Boardwalk Prime</div>
+          <div class="bp-footer-sub">Steak &amp; Seafood</div>
+        </div>
+
+        <div class="bp-footer-meta">
+          <div class="bp-footer-line">
+            <i class="bi bi-geo-alt"></i>
+            <a
+              class="bp-footer-link"
+              href="https://www.google.com/maps/search/?api=1&query=Redcliffe%20Quay%20Redcliffe%20Street%2C%20Redcliffe%20St%2C%20St%20John%27s%2C%20Antigua%20%26%20Barbuda"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Redcliffe Quay, St John's, Antigua &amp; Barbuda
+            </a>
+          </div>
+
+          <div class="bp-footer-line">
+            <i class="bi bi-envelope"></i>
+            <a class="bp-footer-link" href="mailto:reservations@boardwalkprime.com">reservations@boardwalkprime.com</a>
+          </div>
+
+          <div class="bp-footer-line">
+            <i class="bi bi-telephone"></i>
+            <a class="bp-footer-link" href="tel:+1268XXXXXXX">+1 (268) XXX-XXXX</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-footer-col">
+        <div class="bp-footer-head">Navigate</div>
+        <div class="bp-footer-links">
+          <a class="bp-footer-link" href="#about">About</a>
+          <a class="bp-footer-link" href="#menu">Menu</a>
+          <a class="bp-footer-link" href="#signature">Signature</a>
+          <a class="bp-footer-link" href="#reserve">Reserve</a>
+        </div>
+      </div>
+
+      <div class="bp-footer-col">
+        <div class="bp-footer-head">Hours</div>
+
+        <div class="text-white-50 small">
+          <div class="row g-1 align-items-baseline">
+            <div class="col-12 col-sm-4 fw-semibold text-white-50">Mon–Thu</div>
+            <div class="col-12 col-sm-8 text-sm-end">5:00 PM – 10:30 PM</div>
+
+            <div class="col-12 col-sm-4 fw-semibold text-white-50 mt-2 mt-sm-0">Fri–Sat</div>
+            <div class="col-12 col-sm-8 text-sm-end">5:00 PM – 12:00 AM</div>
+
+            <div class="col-12 col-sm-4 fw-semibold text-white-50 mt-2 mt-sm-0">Sun</div>
+            <div class="col-12 col-sm-8 text-sm-end">5:00 PM – 10:00 PM</div>
+          </div>
+        </div>
+
+        <div class="mt-3 d-flex flex-wrap gap-2">
+          <a class="btn btn-light bp-btn bp-pill bp-pill--cta bp-footer-cta" href="#reserve">Reserve</a>
+          <a class="btn btn-outline-light bp-btn bp-pill bp-pill--cta bp-footer-cta" href="mailto:reservations@boardwalkprime.com?subject=Reservation%20Request">
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bp-footer-bottom">
+      <div class="bp-footer-legal text-white-50">
+        © <%= Time.current.year %> Boardwalk Prime. All rights reserved.
+      </div>
+
+      <div class="bp-footer-legal-links">
+        <a class="bp-footer-link" href="#">Privacy</a>
+        <a class="bp-footer-link" href="#">Terms</a>
+        <a class="bp-footer-link" href="#top">Back to top</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Gallery Modal -->
+<div class="modal fade" id="bpGalleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bp-modal">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white" id="bpGalleryTitle">Photo</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img id="bpGalleryImg" class="img-fluid bp-round" alt="Gallery image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script nonce="<%= content_security_policy_nonce %>">
+  function initBpMenuTabs() {
+    const tabs = document.querySelectorAll("[data-bp-tab]");
+    const panels = document.querySelectorAll("[data-bp-panel]");
+    if (!tabs.length || !panels.length) return;
+
+    const showPanel = (key, clickedBtn) => {
+      panels.forEach((p) => p.classList.toggle("d-none", p.dataset.bpPanel !== key));
+
+      tabs.forEach((b) => {
+        b.classList.remove("btn-light");
+        b.classList.add("btn-outline-light");
+      });
+
+      clickedBtn.classList.remove("btn-outline-light");
+      clickedBtn.classList.add("btn-light");
+    };
+
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        showPanel(btn.dataset.bpTab, btn);
+      });
+    });
+  }
+
+  // Works whether Turbo is present or not
+  document.addEventListener("turbo:load", initBpMenuTabs);
+  document.addEventListener("DOMContentLoaded", initBpMenuTabs);
+</script>
+
+<script nonce="<%= content_security_policy_nonce %>">
+  function initBpWordmark() {
+    const wm = document.getElementById("bpWordmark");
+    if (!wm) return;
+
+    // reset (helps Turbo visits)
+    wm.classList.remove("bp-in");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => wm.classList.add("bp-in"));
+    });
+  }
+
+  document.addEventListener("turbo:load", initBpWordmark);
+  document.addEventListener("DOMContentLoaded", initBpWordmark);
+</script>
+
+<script nonce="<%= content_security_policy_nonce %>">
+  function initBpFooterSmoothScroll(){
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        if (!id || id.length < 2) return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
+  document.addEventListener("turbo:load", initBpFooterSmoothScroll);
+  document.addEventListener("DOMContentLoaded", initBpFooterSmoothScroll);
+</script>
+
+<script nonce="<%= content_security_policy_nonce %>">
+  function initBpGalleryModal() {
+    const modalEl = document.getElementById("bpGalleryModal");
+    const imgEl   = document.getElementById("bpGalleryImg");
+    const titleEl = document.getElementById("bpGalleryTitle");
+    if (!modalEl || !imgEl || !titleEl) return;
+
+    // Bind clicks for signature plate tiles (and any future gallery tiles)
+    document.querySelectorAll('[data-bp-src][data-bs-target="#bpGalleryModal"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const src = link.getAttribute("data-bp-src");
+        const title = link.getAttribute("data-bp-title") || "Photo";
+
+        titleEl.textContent = title;
+        imgEl.src = src;
+        imgEl.alt = title;
+
+        // Prefer Bootstrap JS if present
+        if (window.bootstrap && window.bootstrap.Modal) {
+          window.bootstrap.Modal.getOrCreateInstance(modalEl).show();
+          return;
+        }
+
+        // Fallback (if bootstrap JS truly isn't loaded)
+        modalEl.classList.add("show");
+        modalEl.style.display = "block";
+        modalEl.removeAttribute("aria-hidden");
+        document.body.classList.add("modal-open");
+      });
+    });
+
+    // Clear image on close (prevents stale image on next open)
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      imgEl.removeAttribute("src");
+    });
+
+    // Fallback close support if bootstrap isn't loaded
+    modalEl.querySelectorAll("[data-bs-dismiss='modal']").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (window.bootstrap && window.bootstrap.Modal) return;
+        modalEl.classList.remove("show");
+        modalEl.style.display = "none";
+        modalEl.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+        imgEl.removeAttribute("src");
+      });
+    });
+  }
+
+  document.addEventListener("turbo:load", initBpGalleryModal);
+  document.addEventListener("DOMContentLoaded", initBpGalleryModal);
+</script>
+
+<script nonce="<%= content_security_policy_nonce %>">
+  function initBpFadeCarousels() {
+    document.querySelectorAll("[data-bp-fade-carousel]").forEach((root) => {
+      const slides = Array.from(root.querySelectorAll(".bp-fade-slide"));
+      if (slides.length < 2) return;
+
+      // avoid double-init on Turbo visits
+      if (root.dataset.bpInited === "1") return;
+      root.dataset.bpInited = "1";
+
+      const interval = parseInt(root.dataset.interval || "6500", 10);
+      let idx = slides.findIndex((s) => s.classList.contains("is-active"));
+      if (idx < 0) idx = 0;
+
+      // ensure only one active
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === idx));
+
+      setInterval(() => {
+        const next = (idx + 1) % slides.length;
+        slides[idx].classList.remove("is-active");
+        slides[next].classList.add("is-active");
+        idx = next;
+      }, interval);
+    });
+  }
+
+  document.addEventListener("turbo:load", initBpFadeCarousels);
+  document.addEventListener("DOMContentLoaded", initBpFadeCarousels);
+</script>

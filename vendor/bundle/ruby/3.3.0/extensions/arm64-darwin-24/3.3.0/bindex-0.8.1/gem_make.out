@@ -1,0 +1,18 @@
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/jefflui/.rvm/rubies/ruby-3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-rsu67 sitelibdir\=./.gem.20260301-54096-rsu67 clean
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-rsu67 sitelibdir\=./.gem.20260301-54096-rsu67
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-rsu67 sitelibdir\=./.gem.20260301-54096-rsu67 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20260301-54096-rsu67/skiptrace/internal
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-rsu67 sitelibdir\=./.gem.20260301-54096-rsu67 clean

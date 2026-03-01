@@ -1,0 +1,18 @@
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/cgi-0.5.1/ext/cgi/escape
+/Users/jefflui/.rvm/rubies/ruby-3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/cgi-0.5.1/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-fm4n75 sitelibdir\=./.gem.20260301-54096-fm4n75 clean
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/cgi-0.5.1/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-fm4n75 sitelibdir\=./.gem.20260301-54096-fm4n75
+compiling escape.c
+linking shared-object cgi/escape.bundle
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/cgi-0.5.1/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-fm4n75 sitelibdir\=./.gem.20260301-54096-fm4n75 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 escape.bundle ./.gem.20260301-54096-fm4n75/cgi
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/cgi-0.5.1/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-fm4n75 sitelibdir\=./.gem.20260301-54096-fm4n75 clean

@@ -1,0 +1,18 @@
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+/Users/jefflui/.rvm/rubies/ruby-3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-6mfouf sitelibdir\=./.gem.20260301-54096-6mfouf clean
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-6mfouf sitelibdir\=./.gem.20260301-54096-6mfouf
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-6mfouf sitelibdir\=./.gem.20260301-54096-6mfouf install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20260301-54096-6mfouf
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-6mfouf sitelibdir\=./.gem.20260301-54096-6mfouf clean

@@ -1,0 +1,19 @@
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/erb-6.0.2/ext/erb/escape
+/Users/jefflui/.rvm/rubies/ruby-3.3.5/bin/ruby extconf.rb
+checking for rb_ext_ractor_safe() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-7qkffb sitelibdir\=./.gem.20260301-54096-7qkffb clean
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-7qkffb sitelibdir\=./.gem.20260301-54096-7qkffb
+compiling escape.c
+linking shared-object erb/escape.bundle
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-7qkffb sitelibdir\=./.gem.20260301-54096-7qkffb install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 escape.bundle ./.gem.20260301-54096-7qkffb/erb
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-7qkffb sitelibdir\=./.gem.20260301-54096-7qkffb clean

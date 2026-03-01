@@ -1,0 +1,19 @@
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+/Users/jefflui/.rvm/rubies/ruby-3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-xi5sc6 sitelibdir\=./.gem.20260301-54096-xi5sc6 clean
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-xi5sc6 sitelibdir\=./.gem.20260301-54096-xi5sc6
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-xi5sc6 sitelibdir\=./.gem.20260301-54096-xi5sc6 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20260301-54096-xi5sc6/debug
+
+current directory: /Users/jefflui/Development/boardwalkprime/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260301-54096-xi5sc6 sitelibdir\=./.gem.20260301-54096-xi5sc6 clean
