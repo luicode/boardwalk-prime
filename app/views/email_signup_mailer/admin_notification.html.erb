@@ -7,7 +7,7 @@
 
 <p>
   <strong>Submitted:</strong>
-  <%= @email_signup.created_at.to_fs(:long) %>
+  <%= @submitted_at %>
 </p>
 
 <% if @email_signup.ip_address.present? %>

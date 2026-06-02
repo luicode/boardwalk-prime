@@ -1,7 +1,7 @@
 New Boardwalk Prime email signup
 
 Email: <%= @email_signup.email %>
-Submitted: <%= @email_signup.created_at.to_fs(:long) %>
+Submitted: <%= @submitted_at %>
 <% if @email_signup.ip_address.present? %>
 IP address: <%= @email_signup.ip_address %>
 <% end %>
