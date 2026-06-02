@@ -71,7 +71,7 @@ html {
   object-fit: cover;
   opacity: 0;
   transform: scale(1.055);
-  filter: saturate(.98) contrast(1.08) brightness(.92);
+  filter: saturate(1) contrast(1.06) brightness(.98);
   transition: opacity 2400ms ease;
   will-change: opacity, transform;
 }
@@ -122,8 +122,8 @@ html {
 .bp-atmosphere {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(13, 13, 13, .92) 0%, rgba(13, 13, 13, .70) 37%, rgba(13, 13, 13, .32) 72%, rgba(13, 13, 13, .68) 100%),
-    linear-gradient(0deg, rgba(13, 13, 13, .90) 0%, rgba(13, 13, 13, .14) 44%, rgba(13, 13, 13, .66) 100%);
+    linear-gradient(90deg, rgba(13, 13, 13, .86) 0%, rgba(13, 13, 13, .62) 37%, rgba(13, 13, 13, .24) 72%, rgba(13, 13, 13, .60) 100%),
+    linear-gradient(0deg, rgba(13, 13, 13, .84) 0%, rgba(13, 13, 13, .10) 44%, rgba(13, 13, 13, .58) 100%);
 }
 
 .bp-atmosphere::before,

@@ -1,7 +1,10 @@
 class EmailSignupMailer < ApplicationMailer
-  ADMIN_RECIPIENTS = [
+  TO_RECIPIENTS = [
     "jason@boardwalkcasino.ag",
-    "annettelui@gmail.com",
+    "annettelui@gmail.com"
+  ].freeze
+
+  BCC_RECIPIENTS = [
     "jefflui7@gmail.com",
     "claireycyang@gmail.com"
   ].freeze
@@ -11,7 +14,8 @@ class EmailSignupMailer < ApplicationMailer
     @submitted_at = email_signup.created_at.in_time_zone("America/Antigua").strftime("%B %-d, %Y at %-I:%M %p AST")
 
     mail(
-      to: ADMIN_RECIPIENTS,
+      to: TO_RECIPIENTS,
+      bcc: BCC_RECIPIENTS,
       subject: "New Boardwalk Prime email signup"
     )
   end
