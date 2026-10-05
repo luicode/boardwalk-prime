@@ -133,12 +133,45 @@ function initEmailForm() {
   });
 }
 
+function initOpenTableOverlay() {
+  const frame = document.querySelector('.bp-reservations iframe[name="opentable-make-reservation-widget"]');
+  if (!frame || !window.__OT_WIDGET__ || frame.dataset.bpOverlayReady === "1") return;
+  frame.dataset.bpOverlayReady = "1";
+
+  // OpenTable's internal overlay protocol: opt into its native modal even when
+  // its cookie probe rejects the browser. Keep this isolated for easy removal
+  // if OpenTable changes the protocol or provides an official override.
+  const enableOverlay = () => {
+    window.__OT_WIDGET__.IsR3ModalSupported = true;
+    frame.contentWindow?.postMessage({
+      type: "OT_REACT_IS_MODAL_OVERLAY_SUPPORTED",
+      value: true
+    }, "https://www.opentable.com");
+  };
+  const onMessage = (event) => {
+    if (event.source === frame.contentWindow && event.origin === "https://www.opentable.com" &&
+        event.data?.type === "OT_READY_REACT_CLIENT") enableOverlay();
+    if (event.source === window && event.origin === window.location.origin &&
+        event.data?.type === "OT_IS_MODAL_OVERLAY_SUPPORTED") enableOverlay();
+  };
+  window.addEventListener("message", onMessage);
+  frame.addEventListener("load", enableOverlay);
+  enableOverlay();
+  document.addEventListener("turbo:before-cache", () => {
+    window.removeEventListener("message", onMessage);
+    frame.removeEventListener("load", enableOverlay);
+    delete frame.dataset.bpOverlayReady;
+  }, { once: true });
+}
+
 document.addEventListener("turbo:load", () => {
+  initOpenTableOverlay();
   initSplashMedia();
   initEmailForm();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  initOpenTableOverlay();
   initSplashMedia();
   initEmailForm();
 });
