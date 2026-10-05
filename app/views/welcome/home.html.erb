@@ -29,10 +29,6 @@
 
   <div class="bp-atmosphere" aria-hidden="true"></div>
 
-  <div class="bp-reservations" role="region" aria-label="Reserve a table">
-    <script type="text/javascript" src="//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true"></script>
-  </div>
-
   <section class="bp-splash-content" aria-labelledby="bp-title">
     <p class="bp-kicker">Antigua's newest steak &amp; seafood house</p>
 
@@ -47,24 +43,25 @@
       Prime cuts, pristine seafood, and tableside theatre arriving at the water's edge.
     </p>
 
-    <form class="bp-signup" action="<%= email_signups_path %>" method="post" data-bp-email-form>
-      <label class="visually-hidden" for="bp-email">Email address</label>
-      <input
-        id="bp-email"
-        class="bp-email-input"
-        type="email"
-        name="email"
-        placeholder="Enter your email for updates"
-        autocomplete="email"
-        required
-      >
-      <button class="bp-submit" type="submit">Join the List</button>
-    </form>
+  <div class="bp-reservations" role="region" aria-label="Reserve a table">
+    <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
+  </div>
 
     <p class="bp-address">
       Redcliffe Quay, St John's, Antigua
     </p>
   </section>
+
+    <div class="bp-newsletter">
+      <iframe
+        class="bp-newsletter-frame"
+        src="https://www.opentable.com/widget/comms/mural?rid=1558858&amp;lang=en-US"
+        title="Join the Boardwalk Prime newsletter"
+        width="610"
+        height="1100"
+        scrolling="no"
+      ></iframe>
+    </div>
 
   <div class="bp-toast" data-bp-toast role="status" aria-live="polite">
     Thank you for your e-mail. We'll be in touch!
