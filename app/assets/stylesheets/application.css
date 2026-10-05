@@ -220,6 +220,30 @@ html {
   text-shadow: none;
 }
 
+.bp-reservation-close {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 50%;
+  background: #171717;
+  color: #fff;
+  font: 32px/1 sans-serif;
+  cursor: pointer;
+}
+
+.bp-reservation-close:focus-visible {
+  outline: 3px solid var(--bp-gold);
+  outline-offset: 3px;
+}
+
 /* OpenTable rounds its black logo image over a light panel inside its
    cross-origin frame. Cover only the two 4px corner cutouts. */
 #ot-cfe-modal::after {

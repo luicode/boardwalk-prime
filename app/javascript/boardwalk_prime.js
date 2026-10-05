@@ -138,6 +138,27 @@ function initOpenTableOverlay() {
   if (!frame || !window.__OT_WIDGET__ || frame.dataset.bpOverlayReady === "1") return;
   frame.dataset.bpOverlayReady = "1";
 
+  const addCloseButton = () => {
+    const modal = document.querySelector("#ot-cfe-modal");
+    if (!modal || modal.querySelector(".bp-reservation-close")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "bp-reservation-close";
+    button.setAttribute("aria-label", "Close reservation window");
+    button.textContent = "×";
+    button.addEventListener("click", () => {
+      // Use OpenTable's Escape handler so it also restores body scrolling
+      // and clears its modal state before the next reservation is opened.
+      window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+      frame.focus();
+    });
+    modal.appendChild(button);
+  };
+  const modalObserver = new MutationObserver(addCloseButton);
+  modalObserver.observe(document.body, { childList: true });
+  addCloseButton();
+
   // OpenTable's internal overlay protocol: opt into its native modal even when
   // its cookie probe rejects the browser. Keep this isolated for easy removal
   // if OpenTable changes the protocol or provides an official override.
@@ -158,6 +179,7 @@ function initOpenTableOverlay() {
   frame.addEventListener("load", enableOverlay);
   enableOverlay();
   document.addEventListener("turbo:before-cache", () => {
+    modalObserver.disconnect();
     window.removeEventListener("message", onMessage);
     frame.removeEventListener("load", enableOverlay);
     delete frame.dataset.bpOverlayReady;
