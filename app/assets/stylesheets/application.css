@@ -220,53 +220,6 @@ html {
   text-shadow: none;
 }
 
-.bp-reservation-close {
-  position: fixed;
-  top: max(12px, env(safe-area-inset-top));
-  right: max(12px, env(safe-area-inset-right));
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, .65);
-  border-radius: 50%;
-  background: #171717;
-  color: #fff;
-  font: 32px/1 sans-serif;
-  cursor: pointer;
-}
-
-.bp-reservation-close:focus-visible {
-  outline: 3px solid var(--bp-gold);
-  outline-offset: 3px;
-}
-
-/* OpenTable rounds its black logo image over a light panel inside its
-   cross-origin frame. Cover only the two 4px corner cutouts. */
-#ot-cfe-modal::after {
-  content: "";
-  position: fixed;
-  top: calc(1em + 18px);
-  left: calc(50% - 7.5px);
-  transform: translateX(-50%);
-  width: min(642px, calc(100% - 2em - 17px));
-  height: 5px;
-  background: linear-gradient(to right, #000 6px, transparent 6px, transparent calc(100% - 5px), #000 calc(100% - 5px));
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (max-width: 811px) {
-  #ot-cfe-modal::after {
-    top: calc(1em + 2px);
-    left: calc(1em + 1px);
-    transform: none;
-  }
-}
-
 .bp-newsletter-frame {
   display: block;
   width: calc(100% + 48px);

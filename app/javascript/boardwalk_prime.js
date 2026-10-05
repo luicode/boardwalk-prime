@@ -133,67 +133,12 @@ function initEmailForm() {
   });
 }
 
-function initOpenTableOverlay() {
-  const frame = document.querySelector('.bp-reservations iframe[name="opentable-make-reservation-widget"]');
-  if (!frame || !window.__OT_WIDGET__ || frame.dataset.bpOverlayReady === "1") return;
-  frame.dataset.bpOverlayReady = "1";
-
-  const addCloseButton = () => {
-    const modal = document.querySelector("#ot-cfe-modal");
-    if (!modal || modal.querySelector(".bp-reservation-close")) return;
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "bp-reservation-close";
-    button.setAttribute("aria-label", "Close reservation window");
-    button.textContent = "×";
-    button.addEventListener("click", () => {
-      // Use OpenTable's Escape handler so it also restores body scrolling
-      // and clears its modal state before the next reservation is opened.
-      window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
-      frame.focus();
-    });
-    modal.appendChild(button);
-  };
-  const modalObserver = new MutationObserver(addCloseButton);
-  modalObserver.observe(document.body, { childList: true });
-  addCloseButton();
-
-  // OpenTable's internal overlay protocol: opt into its native modal even when
-  // its cookie probe rejects the browser. Keep this isolated for easy removal
-  // if OpenTable changes the protocol or provides an official override.
-  const enableOverlay = () => {
-    window.__OT_WIDGET__.IsR3ModalSupported = true;
-    frame.contentWindow?.postMessage({
-      type: "OT_REACT_IS_MODAL_OVERLAY_SUPPORTED",
-      value: true
-    }, "https://www.opentable.com");
-  };
-  const onMessage = (event) => {
-    if (event.source === frame.contentWindow && event.origin === "https://www.opentable.com" &&
-        event.data?.type === "OT_READY_REACT_CLIENT") enableOverlay();
-    if (event.source === window && event.origin === window.location.origin &&
-        event.data?.type === "OT_IS_MODAL_OVERLAY_SUPPORTED") enableOverlay();
-  };
-  window.addEventListener("message", onMessage);
-  frame.addEventListener("load", enableOverlay);
-  enableOverlay();
-  document.addEventListener("turbo:before-cache", () => {
-    modalObserver.disconnect();
-    window.removeEventListener("message", onMessage);
-    frame.removeEventListener("load", enableOverlay);
-    delete frame.dataset.bpOverlayReady;
-  }, { once: true });
-}
-
 document.addEventListener("turbo:load", () => {
-  initOpenTableOverlay();
   initSplashMedia();
   initEmailForm();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  initOpenTableOverlay();
   initSplashMedia();
   initEmailForm();
 });
