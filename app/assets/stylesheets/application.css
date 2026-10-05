@@ -216,6 +216,26 @@ html {
   backdrop-filter: blur(18px);
 }
 
+.bp-reservations {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: calc(100% - 72px);
+}
+
+.bp-reservations > div {
+  max-width: 100%;
+}
+
+.bp-reservations iframe {
+  display: block;
+  max-width: 100%;
+  border: 0;
+}
+
 .bp-email-input,
 .bp-submit {
   min-height: 52px;
@@ -316,7 +336,7 @@ html {
   .bp-splash-content {
     width: min(560px, calc(100vw - 34px));
     margin: auto;
-    padding: 82px 0 132px;
+    padding: 158px 0 132px;
     text-align: center;
   }
 
@@ -341,6 +361,12 @@ html {
     margin-right: auto;
   }
 
+  .bp-reservations {
+    top: 26px;
+    right: 26px;
+    max-width: calc(100% - 52px);
+  }
+
   .bp-signup {
     grid-template-columns: 1fr;
     width: min(100%, calc(100vw - 56px));
@@ -362,7 +388,7 @@ html {
 @media (max-width: 430px) {
   .bp-splash-content {
     width: min(100vw - 28px, 420px);
-    padding-top: 66px;
+    padding-top: 158px;
     padding-bottom: 126px;
   }
 
