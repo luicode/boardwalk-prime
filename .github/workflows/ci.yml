@@ -13,11 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Install Linux dependencies instead of using the checked-in Mac/RVM bundle.
+      - name: Remove platform-specific bundled gems
+        run: rm -rf vendor/bundle
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+          cache-version: 1
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -29,11 +34,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Install Linux dependencies instead of using the checked-in Mac/RVM bundle.
+      - name: Remove platform-specific bundled gems
+        run: rm -rf vendor/bundle
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+          cache-version: 1
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
@@ -44,11 +54,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Install Linux dependencies instead of using the checked-in Mac/RVM bundle.
+      - name: Remove platform-specific bundled gems
+        run: rm -rf vendor/bundle
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+          cache-version: 1
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
@@ -79,11 +94,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Install Linux dependencies instead of using the checked-in Mac/RVM bundle.
+      - name: Remove platform-specific bundled gems
+        run: rm -rf vendor/bundle
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+          cache-version: 1
 
       - name: Run tests
         env:
