@@ -199,11 +199,32 @@ html {
   letter-spacing: .035em;
 }
 
+.bp-opening {
+  width: min(420px, 100%);
+  margin: 0 0 22px;
+  padding: 18px 22px 20px;
+  border: 1px solid rgba(207, 172, 58, .6);
+  background: linear-gradient(120deg, rgba(13, 13, 13, .82), rgba(13, 13, 13, .52));
+  text-align: center;
+}
+
+.bp-opening-title {
+  margin: 0 0 4px;
+  color: var(--bp-soft-gold);
+  font-family: var(--bp-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 .bp-countdown {
-  display: flex;
-  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
   max-width: 100%;
-  margin: 0 0 24px;
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(220, 206, 162, .24);
 }
 
 .bp-countdown[hidden] {
@@ -211,21 +232,19 @@ html {
 }
 
 .bp-countdown-unit {
-  min-width: 56px;
+  min-width: 0;
   text-align: center;
 }
 
 .bp-countdown-unit + .bp-countdown-unit {
-  margin-left: 14px;
-  padding-left: 14px;
   border-left: 1px solid rgba(220, 206, 162, .24);
 }
 
 .bp-countdown-number {
   display: block;
-  color: var(--bp-soft-gold);
+  color: var(--bp-white);
   font-family: var(--bp-serif);
-  font-size: 2rem;
+  font-size: clamp(2.5rem, 3.6vw, 3.25rem);
   font-weight: 500;
   font-variant-numeric: lining-nums tabular-nums;
   line-height: 1;
@@ -235,7 +254,7 @@ html {
   display: block;
   margin-top: 8px;
   color: var(--bp-smoke);
-  font-size: .5rem;
+  font-size: .56rem;
   font-weight: 500;
   letter-spacing: .16em;
   line-height: 1.5;
@@ -243,9 +262,9 @@ html {
 }
 
 .bp-opening-date {
-  margin: 0 0 10px;
+  margin: 0;
   color: var(--bp-soft-gold);
-  font-size: .6rem;
+  font-size: .75rem;
   font-weight: 500;
   letter-spacing: .1em;
   line-height: 1.6;
@@ -383,7 +402,7 @@ html {
   }
 
   .bp-logo {
-    width: min(280px, 28svh);
+    width: min(280px, 25svh);
   }
 
   .bp-kicker {
@@ -396,7 +415,7 @@ html {
   }
 
   .bp-intro,
-  .bp-countdown {
+  .bp-opening {
     margin-bottom: 18px;
   }
 }
@@ -448,7 +467,7 @@ html {
     margin-right: auto;
   }
 
-  .bp-countdown {
+  .bp-opening {
     margin-left: auto;
     margin-right: auto;
   }
@@ -476,13 +495,8 @@ html {
 }
 
 @media (max-width: 430px) {
-  .bp-countdown-unit {
-    min-width: 48px;
-  }
-
-  .bp-countdown-unit + .bp-countdown-unit {
-    margin-left: 10px;
-    padding-left: 10px;
+  .bp-opening {
+    padding: 16px 12px 18px;
   }
 
   .bp-splash-content {
@@ -597,6 +611,12 @@ html {
   align-items: center;
   gap: 24px;
   margin-top: 56px;
+}
+
+@media (min-width: 861px) and (min-height: 600px) {
+  .bp-secondary-links {
+    margin-top: 20px;
+  }
 }
 
 .bp-book-button:focus-visible,

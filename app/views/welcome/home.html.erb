@@ -48,16 +48,18 @@
       Prime cuts, pristine seafood, and tableside theatre arriving at the water's edge.
     </p>
 
-    <div class="bp-countdown" data-bp-countdown data-bp-opening="2026-10-30T00:00:00-04:00" role="group" aria-label="Countdown to opening on October 30, 2026" hidden>
-      <% %w[days hours minutes seconds].each do |unit| %>
-        <div class="bp-countdown-unit">
-          <span class="bp-countdown-number" data-bp-countdown-<%= unit %>>00</span>
-          <span class="bp-countdown-label"><%= unit %></span>
-        </div>
-      <% end %>
-    </div>
-
-    <p class="bp-opening-date"><time datetime="2026-10-30">October 30, 2026 Grand Opening</time></p>
+    <section class="bp-opening" aria-labelledby="bp-opening-title" data-bp-countdown data-bp-opening="2026-10-30T00:00:00-04:00" hidden>
+      <h1 class="bp-opening-title" id="bp-opening-title">Grand Opening</h1>
+      <p class="bp-opening-date"><time datetime="2026-10-30">October 30, 2026</time></p>
+      <div class="bp-countdown" role="group" aria-label="Time remaining until our grand opening on October 30, 2026">
+        <% %w[days hours minutes seconds].each do |unit| %>
+          <div class="bp-countdown-unit">
+            <span class="bp-countdown-number" data-bp-countdown-<%= unit %>>00</span>
+            <span class="bp-countdown-label"><%= unit %></span>
+          </div>
+        <% end %>
+      </div>
+    </section>
 
     <a class="bp-book-button" href="https://www.opentable.com/booking/restref/availability?rid=1558858&amp;restref=1558858&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" rel="noopener noreferrer">Book a Table</a>
 
