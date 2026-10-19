@@ -61,8 +61,12 @@
 
     <p class="bp-opening-date"><time datetime="2026-10-30">October 30, 2026 Opening</time></p>
 
-    <div class="bp-reservations" role="region" aria-label="Reserve a table">
-      <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
+    <div class="bp-actions">
+      <div class="bp-reservations" role="region" aria-label="Reserve a table">
+        <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
+      </div>
+
+      <button class="bp-newsletter-button" type="button" data-bp-newsletter-open aria-haspopup="dialog" aria-controls="bp-newsletter-modal">Join Newsletter</button>
     </div>
 
     <p class="bp-address">
@@ -70,18 +74,25 @@
     </p>
   </section>
 
-    <div class="bp-newsletter">
-      <iframe
-        class="bp-newsletter-frame"
-        src="https://www.opentable.com/widget/comms/mural?rid=1558858&amp;lang=en-US"
-        title="Join the Boardwalk Prime newsletter"
-        width="610"
-        height="1100"
-        scrolling="no"
-      ></iframe>
-    </div>
-
   <div class="bp-toast" data-bp-toast role="status" aria-live="polite">
     Thank you for your e-mail. We'll be in touch!
   </div>
 </main>
+
+<dialog class="bp-newsletter-modal" id="bp-newsletter-modal" aria-label="Newsletter signup" data-bp-newsletter-modal>
+  <div class="bp-modal-header">
+    <form method="dialog">
+      <button class="bp-modal-close" aria-label="Close newsletter signup" autofocus>&times;</button>
+    </form>
+  </div>
+  <div class="bp-newsletter">
+    <iframe
+      class="bp-newsletter-frame"
+      data-src="https://www.opentable.com/widget/comms/mural?rid=1558858&amp;lang=en-US"
+      title="Join the Boardwalk Prime newsletter"
+      width="610"
+      height="1100"
+      scrolling="no"
+    ></iframe>
+  </div>
+</dialog>

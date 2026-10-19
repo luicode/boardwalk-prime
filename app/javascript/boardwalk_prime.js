@@ -133,6 +133,32 @@ function initEmailForm() {
   });
 }
 
+function initNewsletterModal() {
+  const dialog = document.querySelector("[data-bp-newsletter-modal]");
+  const trigger = document.querySelector("[data-bp-newsletter-open]");
+  if (!dialog || !trigger || dialog.dataset.bpReady === "1") return;
+
+  dialog.dataset.bpReady = "1";
+  trigger.addEventListener("click", () => {
+    const frame = dialog.querySelector("iframe[data-src]");
+    if (frame && !frame.hasAttribute("src")) frame.src = frame.dataset.src;
+    dialog.showModal();
+    dialog.scrollTop = 0;
+    document.body.classList.add("bp-modal-open");
+  });
+
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("bp-modal-open");
+  });
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+}
+
 let countdownTimer = null;
 
 function stopOpeningCountdown() {
@@ -174,15 +200,21 @@ function initOpeningCountdown() {
   if (!countdown.hidden) countdownTimer = window.setInterval(update, 1000);
 }
 
-document.addEventListener("turbo:before-cache", stopOpeningCountdown);
+document.addEventListener("turbo:before-cache", () => {
+  stopOpeningCountdown();
+  document.querySelector("[data-bp-newsletter-modal][open]")?.close();
+  document.body.classList.remove("bp-modal-open");
+});
 
 document.addEventListener("turbo:load", () => {
+  initNewsletterModal();
   initSplashMedia();
   initEmailForm();
   initOpeningCountdown();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  initNewsletterModal();
   initSplashMedia();
   initEmailForm();
   initOpeningCountdown();
