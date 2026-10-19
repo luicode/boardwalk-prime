@@ -66,8 +66,10 @@
         <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
       </div>
 
-      <button class="bp-newsletter-button" type="button" data-bp-newsletter-open aria-haspopup="dialog" aria-controls="bp-newsletter-modal">Join Newsletter</button>
+      <button class="bp-newsletter-button" type="button" data-bp-modal-open="bp-newsletter-modal" aria-haspopup="dialog" aria-controls="bp-newsletter-modal">Join Newsletter</button>
     </div>
+
+    <button class="bp-about-button" type="button" data-bp-modal-open="bp-about-modal" aria-haspopup="dialog" aria-controls="bp-about-modal">About Us <span aria-hidden="true">↗</span></button>
 
     <p class="bp-address">
       Redcliffe Quay, St John's, Antigua
@@ -79,7 +81,7 @@
   </div>
 </main>
 
-<dialog class="bp-newsletter-modal" id="bp-newsletter-modal" aria-label="Newsletter signup" data-bp-newsletter-modal>
+<dialog class="bp-newsletter-modal" id="bp-newsletter-modal" aria-label="Newsletter signup" data-bp-modal>
   <div class="bp-modal-header">
     <form method="dialog">
       <button class="bp-modal-close" aria-label="Close newsletter signup" autofocus>&times;</button>
@@ -94,5 +96,30 @@
       height="1100"
       scrolling="no"
     ></iframe>
+  </div>
+</dialog>
+
+<dialog class="bp-about-modal" id="bp-about-modal" aria-labelledby="bp-about-title" data-bp-modal>
+  <div class="bp-about-panel">
+    <%= image_tag "DSC04293.webp", class: "bp-about-backdrop", alt: "", loading: "lazy" %>
+    <div class="bp-about-close-bar">
+      <form method="dialog">
+        <button class="bp-modal-close" aria-label="Close About Us" autofocus>&times;</button>
+      </form>
+    </div>
+    <article class="bp-about-copy">
+      <p class="bp-about-eyebrow">Redcliffe Quay · Antigua</p>
+      <h2 id="bp-about-title">About Boardwalk Prime</h2>
+      <div class="bp-about-rule" aria-hidden="true"></div>
+      <p>Located on the waterfront in historic <strong>Redcliffe Quay, St. John’s</strong>, Boardwalk Prime overlooks the Caribbean and the bustle of Antigua’s cruise harbour, bringing together exceptional food, premium drinks and the unmistakable energy of the island.</p>
+      <p>At its heart, Boardwalk Prime is a contemporary steak and seafood restaurant, showcasing outstanding produce, beautifully prepared steaks, fresh local seafood and bold flavours from the grill. Quality is uncompromising — from the ingredients on the plate to an expertly selected wine list, premium spirits and beautifully crafted cocktails.</p>
+      <p>Boardwalk Prime transforms throughout the day. Arrive for relaxed drinks, stay for dinner and watch the Caribbean sunset give way to an evening of live music, cocktails and a lively atmosphere.</p>
+      <p>The setting combines the sophistication of crisp, table-clothed dining and exceptional service with the warmth and energy of the Caribbean. Whether it’s an intimate dinner for two, an evening with friends and family, a celebration, corporate gathering or a larger party, Boardwalk Prime is designed for occasions of every kind.</p>
+      <p>And when dinner is over, the evening can continue downstairs at <strong>Boardwalk Casino</strong>, bringing gaming and entertainment together with the restaurant, music and nightlife all in one destination.</p>
+      <p>Enjoy a perfectly cooked steak. Share fresh seafood. Order another cocktail. Listen to the music and take in the view.</p>
+      <p class="bp-about-statement"><strong>Boardwalk Prime is more than somewhere to eat — it’s somewhere to spend the evening.</strong></p>
+      <p class="bp-about-signature"><strong>Prime food. Prime drinks. Prime location. Prime entertainment.</strong></p>
+      <p class="bp-about-welcome"><strong>Welcome to Boardwalk Prime, Antigua.</strong></p>
+    </article>
   </div>
 </dialog>
