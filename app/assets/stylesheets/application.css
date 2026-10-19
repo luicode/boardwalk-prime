@@ -529,6 +529,9 @@ html {
 }
 
 .bp-book-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -552,6 +555,40 @@ html {
 
 .bp-book-button:hover {
   background: linear-gradient(125deg, #ecdfb6, #d9bd79);
+}
+
+.bp-book-button::after {
+  content: "";
+  position: absolute;
+  inset: -50% auto -50% -70%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 249, 226, .35) 35%, rgba(255, 255, 246, .72) 50%, rgba(255, 249, 226, .35) 65%, transparent);
+  transform: skewX(-22deg) translateX(0);
+  opacity: 0;
+  pointer-events: none;
+  animation: bpGoldGlint 6s ease-in-out infinite;
+}
+
+@keyframes bpGoldGlint {
+  0%, 45% {
+    transform: skewX(-22deg) translateX(0);
+    opacity: 0;
+  }
+
+  52% {
+    opacity: 1;
+  }
+
+  85%, 100% {
+    transform: skewX(-22deg) translateX(550%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-book-button::after {
+    animation: none;
+  }
 }
 
 .bp-secondary-links {
