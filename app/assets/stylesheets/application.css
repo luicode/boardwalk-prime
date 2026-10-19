@@ -251,15 +251,6 @@ html {
   line-height: 1.6;
 }
 
-.bp-hours {
-  margin: 14px 0 0;
-  color: var(--bp-soft-gold);
-  font-size: .6rem;
-  font-weight: 500;
-  letter-spacing: .08em;
-  line-height: 1.65;
-}
-
 .bp-address {
   max-width: 430px;
   margin: 4px 0 0;
@@ -727,7 +718,7 @@ html {
   margin: 0;
   color: var(--bp-soft-gold);
   font-family: "Italianno", "Snell Roundhand", cursive;
-  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 1.15;
 }
@@ -742,9 +733,9 @@ html {
 .bp-about-copy > p:not(.bp-about-eyebrow) {
   margin: 0 0 22px;
   color: rgba(255, 255, 254, .86);
-  font-family: var(--bp-serif);
-  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-  line-height: 1.65;
+  font-family: var(--bp-sans);
+  font-size: clamp(.85rem, 1vw, .95rem);
+  line-height: 1.85;
   letter-spacing: .01em;
 }
 
@@ -766,7 +757,6 @@ html {
 
 .bp-about-copy .bp-about-welcome {
   margin-bottom: 0 !important;
-  font-style: italic;
 }
 
 @media (max-width: 480px) {
@@ -778,5 +768,63 @@ html {
   .bp-about-copy {
     padding-top: 68px;
     padding-bottom: 36px;
+  }
+}
+
+.bp-hours-modal {
+  width: min(640px, calc(100% - 40px));
+}
+
+.bp-hours-copy {
+  padding: 56px clamp(24px, 5vw, 64px) 44px;
+}
+
+.bp-hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--bp-white);
+  font-family: var(--bp-sans);
+  font-size: clamp(.85rem, 1vw, .95rem);
+  line-height: 1.5;
+}
+
+.bp-hours-table tr {
+  border-bottom: 1px solid rgba(220, 206, 162, .2);
+}
+
+.bp-hours-table tr:last-child {
+  border-bottom: 0;
+}
+
+.bp-hours-table th,
+.bp-hours-table td {
+  padding: 12px 0;
+}
+
+.bp-hours-table th {
+  padding-right: 16px;
+  color: var(--bp-soft-gold);
+  font-weight: 500;
+  text-align: left;
+}
+
+.bp-hours-table td {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .bp-hours-modal {
+    width: calc(100% - 24px);
+  }
+
+  .bp-hours-copy {
+    padding-top: 60px;
+    padding-bottom: 28px;
+  }
+
+  .bp-secondary-links {
+    column-gap: 18px;
   }
 }

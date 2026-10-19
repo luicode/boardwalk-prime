@@ -65,10 +65,9 @@
 
     <div class="bp-secondary-links">
       <button class="bp-about-button" type="button" data-bp-modal-open="bp-newsletter-modal" aria-haspopup="dialog" aria-controls="bp-newsletter-modal">Join Newsletter <span aria-hidden="true">↗</span></button>
+      <button class="bp-about-button" type="button" data-bp-modal-open="bp-hours-modal" aria-haspopup="dialog" aria-controls="bp-hours-modal">Hours <span aria-hidden="true">↗</span></button>
       <button class="bp-about-button" type="button" data-bp-modal-open="bp-about-modal" aria-haspopup="dialog" aria-controls="bp-about-modal">About Us <span aria-hidden="true">↗</span></button>
     </div>
-
-    <p class="bp-hours">Sun–Sat 4:30pm–10:00pm</p>
 
     <p class="bp-address">
       Redcliffe Quay, St John's, Antigua
@@ -120,5 +119,34 @@
       <p class="bp-about-signature"><strong>Prime food. Prime drinks. Prime location. Prime entertainment.</strong></p>
       <p class="bp-about-welcome"><strong>Welcome to Boardwalk Prime, Antigua.</strong></p>
     </article>
+  </div>
+</dialog>
+
+<dialog class="bp-about-modal bp-hours-modal" id="bp-hours-modal" aria-labelledby="bp-hours-title" data-bp-modal>
+  <div class="bp-about-panel">
+    <%= image_tag "DSC04300.webp", class: "bp-about-backdrop", alt: "", loading: "lazy" %>
+    <div class="bp-about-close-bar">
+      <form method="dialog">
+        <button class="bp-modal-close" aria-label="Close hours" autofocus>&times;</button>
+      </form>
+    </div>
+    <div class="bp-about-copy bp-hours-copy">
+      <p class="bp-about-eyebrow">Boardwalk Prime · Antigua</p>
+      <h2 id="bp-hours-title">Opening Hours</h2>
+      <div class="bp-about-rule" aria-hidden="true"></div>
+      <table class="bp-hours-table" aria-labelledby="bp-hours-title">
+        <thead class="visually-hidden">
+          <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+        </thead>
+        <tbody>
+          <% %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday].each do |day| %>
+            <tr>
+              <th scope="row"><%= day %></th>
+              <td>4:30pm–10:00pm</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </dialog>
