@@ -198,6 +198,58 @@ html {
   letter-spacing: .035em;
 }
 
+.bp-countdown {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 24px;
+}
+
+.bp-countdown[hidden] {
+  display: none;
+}
+
+.bp-countdown-unit {
+  min-width: 56px;
+  text-align: center;
+}
+
+.bp-countdown-unit + .bp-countdown-unit {
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(220, 206, 162, .24);
+}
+
+.bp-countdown-number {
+  display: block;
+  color: var(--bp-soft-gold);
+  font-family: var(--bp-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1;
+}
+
+.bp-countdown-label {
+  display: block;
+  margin-top: 8px;
+  color: var(--bp-smoke);
+  font-size: .5rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.bp-opening-date {
+  margin: 0 0 10px;
+  color: var(--bp-soft-gold);
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  line-height: 1.6;
+}
+
 .bp-address {
   max-width: 430px;
   margin: 12px 0 0;
@@ -390,6 +442,11 @@ html {
     margin: 0 auto;
   }
 
+  .bp-countdown {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .bp-signup {
     grid-template-columns: 1fr;
     width: min(100%, calc(100vw - 56px));
@@ -413,6 +470,15 @@ html {
 }
 
 @media (max-width: 430px) {
+  .bp-countdown-unit {
+    min-width: 48px;
+  }
+
+  .bp-countdown-unit + .bp-countdown-unit {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+
   .bp-splash-content {
     width: min(100vw - 28px, 420px);
     padding: 0;

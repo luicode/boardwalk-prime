@@ -133,12 +133,57 @@ function initEmailForm() {
   });
 }
 
+let countdownTimer = null;
+
+function stopOpeningCountdown() {
+  window.clearInterval(countdownTimer);
+  countdownTimer = null;
+}
+
+function initOpeningCountdown() {
+  stopOpeningCountdown();
+
+  const countdown = document.querySelector("[data-bp-countdown]");
+  if (!countdown) return;
+
+  const opening = Date.parse(countdown.dataset.bpOpening);
+  if (!Number.isFinite(opening)) return;
+
+  const fields = ["days", "hours", "minutes", "seconds"].map((unit) =>
+    countdown.querySelector(`[data-bp-countdown-${unit}]`)
+  );
+
+  const update = () => {
+    const remaining = Math.max(0, Math.ceil((opening - Date.now()) / 1000));
+    const values = [
+      Math.floor(remaining / 86400),
+      Math.floor((remaining % 86400) / 3600),
+      Math.floor((remaining % 3600) / 60),
+      remaining % 60
+    ];
+
+    fields.forEach((field, index) => {
+      field.textContent = String(values[index]).padStart(2, "0");
+    });
+
+    countdown.hidden = remaining === 0;
+    if (remaining === 0) stopOpeningCountdown();
+  };
+
+  update();
+  if (!countdown.hidden) countdownTimer = window.setInterval(update, 1000);
+}
+
+document.addEventListener("turbo:before-cache", stopOpeningCountdown);
+
 document.addEventListener("turbo:load", () => {
   initSplashMedia();
   initEmailForm();
+  initOpeningCountdown();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   initSplashMedia();
   initEmailForm();
+  initOpeningCountdown();
 });

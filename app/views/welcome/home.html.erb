@@ -1,4 +1,11 @@
-<% photos = (1..18).map { |n| "boardwalk-prime-#{n}.webp" } %>
+<% photos = [
+  "DSC04291.webp",
+  "DSC04293.webp",
+  "DSC04300.webp",
+  "DSC04305.webp",
+  "DSC04319.webp",
+  "BW Prime_SM Oct_1.webp"
+] %>
 <% videos = [
   "boardwalk-prime-hero-video-steak.mp4",
   "Boardwalk Prime - Website Landing Page Video.mp4"
@@ -43,9 +50,20 @@
       Prime cuts, pristine seafood, and tableside theatre arriving at the water's edge.
     </p>
 
-  <div class="bp-reservations" role="region" aria-label="Reserve a table">
-    <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
-  </div>
+    <div class="bp-countdown" data-bp-countdown data-bp-opening="2026-10-30T00:00:00-04:00" role="group" aria-label="Countdown to opening on October 30, 2026" hidden>
+      <% %w[days hours minutes seconds].each do |unit| %>
+        <div class="bp-countdown-unit">
+          <span class="bp-countdown-number" data-bp-countdown-<%= unit %>>00</span>
+          <span class="bp-countdown-label"><%= unit %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="bp-opening-date"><time datetime="2026-10-30">October 30, 2026 Opening</time></p>
+
+    <div class="bp-reservations" role="region" aria-label="Reserve a table">
+      <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1558858&type=button&theme=standard&color=2&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&logo_pid=97771838&cfe=true'></script>
+    </div>
 
     <p class="bp-address">
       Redcliffe Quay, St John's, Antigua
