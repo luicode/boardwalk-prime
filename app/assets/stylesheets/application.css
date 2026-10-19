@@ -253,7 +253,7 @@ html {
 
 .bp-address {
   max-width: 430px;
-  margin: 4px 0 0;
+  margin: 20px 0 0;
   color: rgba(255, 255, 254, .46);
   font-size: .55rem;
   font-weight: 500;
@@ -827,4 +827,86 @@ html {
   .bp-secondary-links {
     column-gap: 18px;
   }
+}
+
+.bp-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin-top: 10px;
+  font-size: .65rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+.bp-contact a,
+.bp-socials a {
+  color: var(--bp-soft-gold);
+  text-decoration: none;
+}
+
+.bp-contact a:hover,
+.bp-socials a:hover {
+  color: var(--bp-white);
+}
+
+.bp-contact a:focus-visible,
+.bp-socials a:focus-visible {
+  outline: 2px solid var(--bp-soft-gold);
+  outline-offset: 4px;
+}
+
+.bp-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.bp-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(220, 206, 162, .3);
+  border-radius: 3px;
+  background: rgba(220, 206, 162, .1);
+}
+
+.bp-socials svg {
+  width: 19px;
+  height: 19px;
+}
+
+@media (max-width: 860px) {
+  .bp-contact {
+    justify-content: center;
+  }
+
+  .bp-socials {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 861px) and (min-height: 600px) and (max-height: 760px) {
+  .bp-logo {
+    width: min(240px, 24svh);
+  }
+}
+
+.bp-socials .bp-facebook-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.bp-socials a:hover {
+  background: rgba(220, 206, 162, .2);
+  border-color: var(--bp-soft-gold);
+}
+
+.bp-contact a {
+  white-space: nowrap;
 }
