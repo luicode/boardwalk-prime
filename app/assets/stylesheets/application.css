@@ -200,74 +200,65 @@ html {
 }
 
 .bp-opening {
-  width: min(420px, 100%);
-  margin: 0 0 22px;
-  padding: 18px 22px 20px;
-  border: 1px solid rgba(207, 172, 58, .6);
-  background: linear-gradient(120deg, rgba(13, 13, 13, .82), rgba(13, 13, 13, .52));
+  position: relative;
+  width: min(340px, 100%);
+  margin: 0 0 26px;
+  padding: 20px 24px 24px;
+  border: 1px solid rgba(207, 172, 58, .65);
+  background: linear-gradient(135deg, rgba(28, 25, 17, .9), rgba(13, 13, 13, .82));
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .18);
   text-align: center;
 }
 
-.bp-opening-title {
-  margin: 0 0 4px;
-  color: var(--bp-soft-gold);
-  font-family: var(--bp-serif);
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.1;
+.bp-opening::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(220, 206, 162, .2);
+  pointer-events: none;
 }
 
-.bp-countdown {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: 100%;
-  max-width: 100%;
-  margin: 18px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(220, 206, 162, .24);
-}
-
-.bp-countdown[hidden] {
-  display: none;
-}
-
-.bp-countdown-unit {
-  min-width: 0;
-  text-align: center;
-}
-
-.bp-countdown-unit + .bp-countdown-unit {
-  border-left: 1px solid rgba(220, 206, 162, .24);
-}
-
-.bp-countdown-number {
-  display: block;
-  color: var(--bp-white);
-  font-family: var(--bp-serif);
-  font-size: clamp(2.5rem, 3.6vw, 3.25rem);
-  font-weight: 500;
-  font-variant-numeric: lining-nums tabular-nums;
+.bp-opening-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--bp-gold);
+  font-size: .5rem;
   line-height: 1;
 }
 
-.bp-countdown-label {
-  display: block;
-  margin-top: 8px;
-  color: var(--bp-smoke);
-  font-size: .56rem;
-  font-weight: 500;
-  letter-spacing: .16em;
-  line-height: 1.5;
-  text-transform: uppercase;
+.bp-opening-ornament::before,
+.bp-opening-ornament::after {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 206, 162, .6));
 }
 
-.bp-opening-date {
+.bp-opening-ornament::after {
+  transform: rotate(180deg);
+}
+
+.bp-opening-title {
   margin: 0;
   color: var(--bp-soft-gold);
-  font-size: .75rem;
+  font-family: var(--bp-serif);
+  font-size: clamp(2.25rem, 3.6vw, 2.75rem);
   font-weight: 500;
-  letter-spacing: .1em;
-  line-height: 1.6;
+  letter-spacing: .06em;
+  line-height: 1.1;
+}
+
+.bp-opening-welcome {
+  margin: 10px 0 0;
+  color: var(--bp-soft-gold);
+  font-size: .55rem;
+  font-weight: 500;
+  letter-spacing: .13em;
+  line-height: 1.7;
+  text-transform: uppercase;
 }
 
 .bp-address {
