@@ -261,6 +261,26 @@ html {
   text-transform: uppercase;
 }
 
+.bp-closure-notice {
+  margin-top: 18px;
+  padding: 14px 10px;
+  border: 1px solid var(--bp-soft-gold);
+  background: var(--bp-gold);
+  color: var(--bp-black);
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.bp-closure-notice-title {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
 .bp-address {
   max-width: 430px;
   margin: 20px 0 0;

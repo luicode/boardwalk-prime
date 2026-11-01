@@ -50,8 +50,14 @@
 
     <section class="bp-opening" aria-labelledby="bp-opening-title">
       <div class="bp-opening-ornament" aria-hidden="true"><span>◆</span></div>
-      <h1 class="bp-opening-title" id="bp-opening-title">Open Now</h1>
+      <h1 class="bp-opening-title" id="bp-opening-title"><%= @closed_for_special_event ? "Closed Today" : "Open Now" %></h1>
       <p class="bp-opening-welcome">We look forward to welcoming you</p>
+      <% if @show_closure_notice %>
+        <div class="bp-closure-notice" role="note" aria-label="Special event closure">
+          <strong class="bp-closure-notice-title">Closed November 4</strong>
+          <span>For a special event</span>
+        </div>
+      <% end %>
     </section>
 
     <a class="bp-book-button" href="https://www.opentable.com/booking/restref/availability?rid=1558858&amp;restref=1558858&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" rel="noopener noreferrer">Book a Table</a>
