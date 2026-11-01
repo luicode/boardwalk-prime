@@ -7,7 +7,7 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
 
       assert_response :success
       assert_select "#bp-opening-title", "Open Now"
-      assert_select ".bp-opening .bp-closure-notice", text: /Closed on November 4\s+Special event/
+      assert_select ".bp-opening .bp-closure-notice", text: /Closed on Wednesday, November 4\s+Special event/
     end
   end
 

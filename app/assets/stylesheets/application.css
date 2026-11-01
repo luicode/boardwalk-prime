@@ -262,6 +262,8 @@ html {
 }
 
 .bp-closure-notice {
+  position: relative;
+  overflow: hidden;
   margin-top: 18px;
   padding: 16px 10px;
   border: 1px solid rgba(220, 206, 162, .3);
@@ -283,6 +285,31 @@ html {
   letter-spacing: .015em;
   line-height: 1.2;
   text-transform: none;
+}
+
+.bp-closure-notice-date {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bp-closure-notice::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 20%, rgba(255, 243, 202, .16) 50%, transparent 80%);
+    transform: translateX(-150%) skewX(-20deg);
+    animation: bp-closure-shine 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes bp-closure-shine {
+  0%, 72% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  92%, 100% {
+    transform: translateX(150%) skewX(-20deg);
+  }
 }
 
 .bp-address {
