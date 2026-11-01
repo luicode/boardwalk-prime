@@ -263,22 +263,26 @@ html {
 
 .bp-closure-notice {
   margin-top: 18px;
-  padding: 14px 10px;
-  border: 1px solid var(--bp-soft-gold);
-  background: var(--bp-gold);
-  color: var(--bp-black);
-  font-size: .85rem;
-  font-weight: 600;
+  padding: 16px 10px;
+  border: 1px solid rgba(220, 206, 162, .3);
+  background: linear-gradient(135deg, rgba(207, 172, 58, .13), rgba(220, 206, 162, .04));
+  color: var(--bp-soft-gold);
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .18em;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .bp-closure-notice-title {
   display: block;
-  margin-bottom: 3px;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-family: var(--bp-serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: .015em;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .bp-address {
