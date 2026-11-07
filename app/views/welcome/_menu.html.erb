@@ -1,0 +1,36 @@
+<% menu_pages = ["Starters, Small Plates & Sushi", "The Steakhouse, Fire & Ocean", "Dessert & After Dinner"] %>
+<dialog class="bp-menu-modal" id="bp-menu-modal" aria-labelledby="bp-menu-title" data-bp-modal data-bp-menu>
+  <header class="bp-menu-header">
+    <div><p class="bp-menu-eyebrow">Boardwalk Prime · Antigua</p><h2 id="bp-menu-title">An evening, beautifully served.</h2></div>
+    <form method="dialog"><button class="bp-modal-close" aria-label="Close menu" autofocus>&times;</button></form>
+  </header>
+  <nav class="bp-menu-sections" aria-label="Menu sections">
+    <% ["To Start", "Steak & Seafood", "After Dinner"].each_with_index do |label, index| %>
+      <button type="button" data-bp-menu-go="<%= index %>" <%= 'aria-current=page' if index.zero? %>><%= label %></button>
+    <% end %>
+  </nav>
+  <div class="bp-menu-stage" data-bp-menu-stage>
+    <div class="bp-menu-book" data-bp-menu-book aria-label="Boardwalk Prime menu book">
+      <div class="bp-menu-verso" aria-hidden="true"><%= render "menu_back" %></div>
+      <% menu_pages.each_with_index do |title, index| %>
+        <div class="bp-menu-leaf" data-bp-menu-leaf data-title="<%= title %>" style="--leaf-order: <%= 4 - index %>" <%= 'inert' unless index.zero? %>>
+          <div class="bp-menu-face bp-menu-front">
+            <a href="/menus/boardwalk-prime/page-<%= index + 1 %>.pdf" target="_blank" rel="noopener" aria-label="Enlarge page <%= index + 1 %>: <%= title %> (PDF, opens in a new tab)">
+              <img data-src="/menus/boardwalk-prime/page-<%= index + 1 %>.webp" width="1546" height="2000" alt="<%= title %>. Open this page for an enlarged, readable menu." decoding="async">
+            </a>
+          </div>
+          <div class="bp-menu-face bp-menu-back" aria-hidden="true"><%= render "menu_back" %></div>
+        </div>
+      <% end %>
+      <div class="bp-menu-end" data-bp-menu-end inert><%= render "menu_back" %></div>
+    </div>
+  </div>
+  <footer class="bp-menu-footer">
+    <div class="bp-menu-controls" aria-label="Turn menu pages">
+      <button type="button" data-bp-menu-prev aria-label="Previous menu page" disabled><span aria-hidden="true">←</span></button>
+      <p data-bp-menu-status role="status" aria-live="polite" aria-atomic="true">01 / 03 <span>Starters, Small Plates &amp; Sushi</span></p>
+      <button type="button" data-bp-menu-next aria-label="Next menu page"><span aria-hidden="true">→</span></button>
+    </div>
+    <div class="bp-menu-footnote"><span>Swipe or use the arrows to turn the page · Tap a page to enlarge</span><a href="/menus/boardwalk-prime/menu.pdf" target="_blank" rel="noopener">View full menu PDF <span aria-hidden="true">↗</span></a></div>
+  </footer>
+</dialog>

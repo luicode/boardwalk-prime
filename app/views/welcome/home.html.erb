@@ -63,6 +63,7 @@
     <a class="bp-book-button" href="https://www.opentable.com/booking/restref/availability?rid=1558858&amp;restref=1558858&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" rel="noopener noreferrer">Book a Table</a>
 
     <div class="bp-secondary-links">
+      <button class="bp-about-button" type="button" data-bp-modal-open="bp-menu-modal" aria-haspopup="dialog" aria-controls="bp-menu-modal">Menu <span aria-hidden="true">↗</span></button>
       <button class="bp-about-button" type="button" data-bp-modal-open="bp-newsletter-modal" aria-haspopup="dialog" aria-controls="bp-newsletter-modal">Join Newsletter <span aria-hidden="true">↗</span></button>
       <button class="bp-about-button" type="button" data-bp-modal-open="bp-hours-modal" aria-haspopup="dialog" aria-controls="bp-hours-modal">Hours <span aria-hidden="true">↗</span></button>
       <button class="bp-about-button" type="button" data-bp-modal-open="bp-about-modal" aria-haspopup="dialog" aria-controls="bp-about-modal">About Us <span aria-hidden="true">↗</span></button>
@@ -92,6 +93,8 @@
     Thank you for your e-mail. We'll be in touch!
   </div>
 </main>
+
+<%= render "menu" %>
 
 <dialog class="bp-newsletter-modal" id="bp-newsletter-modal" aria-label="Newsletter signup" data-bp-modal>
   <div class="bp-modal-header">
