@@ -71,6 +71,7 @@ test('consent loads one tag, denies advertising and sends exactly one initial pa
   assert.equal(h.measured('page_view').length, 1);
   const config = h.events().find((item) => item[0] === 'config')[2];
   assert.equal(config.send_page_view, false);
+  assert.equal(h.events().some((item) => item[0] === 'set' && item[1] === 'send_page_view' && item[2] === false), true);
   assert.equal(config.allow_google_signals, false);
   assert.equal(config.allow_ad_personalization_signals, false);
   assert.equal(h.events().find((item) => item[0] === 'consent')[2].ad_user_data, 'denied');

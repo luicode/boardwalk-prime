@@ -61,6 +61,8 @@ function startAnalytics() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag('consent', 'default', { ...deniedAds, analytics_storage: 'denied' });
+    // Cover automatic destination configuration as well as our explicit config.
+    window.gtag('set', 'send_page_view', false);
     window.gtag('set', 'ads_data_redaction', true);
     window.gtag('consent', 'update', { ...deniedAds, analytics_storage: 'granted' });
     window.gtag('js', new Date());
