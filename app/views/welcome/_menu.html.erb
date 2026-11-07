@@ -1,4 +1,5 @@
 <% menu_pages = ["Starters, Small Plates & Sushi", "The Steakhouse, Fire & Ocean", "Dessert & After Dinner"] %>
+<% menu_photos = ["DSC04293.webp", "DSC04319.webp", "DSC04300.webp"] %>
 <dialog class="bp-menu-modal" id="bp-menu-modal" aria-labelledby="bp-menu-title" data-bp-modal data-bp-menu>
   <header class="bp-menu-header">
     <div><p class="bp-menu-eyebrow">Boardwalk Prime · Antigua</p><h2 id="bp-menu-title">An evening, beautifully served.</h2></div>
@@ -11,7 +12,7 @@
   </nav>
   <div class="bp-menu-stage" data-bp-menu-stage>
     <div class="bp-menu-book" data-bp-menu-book aria-label="Boardwalk Prime menu book">
-      <div class="bp-menu-verso" aria-hidden="true"><%= render "menu_back" %></div>
+      <div class="bp-menu-verso" aria-hidden="true"><%= render "menu_back", photo: menu_photos.first %></div>
       <% menu_pages.each_with_index do |title, index| %>
         <div class="bp-menu-leaf" data-bp-menu-leaf data-title="<%= title %>" style="--leaf-order: <%= 4 - index %>" <%= 'inert' unless index.zero? %>>
           <div class="bp-menu-face bp-menu-front">
@@ -19,10 +20,11 @@
               <img data-src="/menus/boardwalk-prime/page-<%= index + 1 %>.webp" width="1546" height="2000" alt="<%= title %>. Open this page for an enlarged, readable menu." decoding="async">
             </a>
           </div>
-          <div class="bp-menu-face bp-menu-back" aria-hidden="true"><%= render "menu_back" %></div>
+          <% if index < menu_pages.length - 1 %>
+            <div class="bp-menu-face bp-menu-back" aria-hidden="true"><%= render "menu_back", photo: menu_photos[index + 1] %></div>
+          <% end %>
         </div>
       <% end %>
-      <div class="bp-menu-end" data-bp-menu-end inert><%= render "menu_back" %></div>
     </div>
   </div>
   <footer class="bp-menu-footer">

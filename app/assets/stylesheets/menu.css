@@ -21,9 +21,8 @@
 .bp-menu-stage { margin: 0 auto; width: min(100%, 1000px, max(360px, calc((100dvh - 324px) * 1.54545))); perspective: 2200px; }
 .bp-menu-book { position: relative; width: 100%; aspect-ratio: 17 / 11; transform-style: preserve-3d;  }
 .bp-menu-book::before { content: ""; position: absolute; inset: -5px -6px -7px; border: 1px solid #8d7549; border-radius: 3px; background: #25211a; box-shadow: 0 2px 0 #baa782, 0 4px 0 #393025, 0 24px 35px #0007; }
-.bp-menu-verso, .bp-menu-end { position: absolute; top: 0; width: 50%; height: 100%; }
+.bp-menu-verso { position: absolute; top: 0; width: 50%; height: 100%; }
 .bp-menu-verso { left: 0; }
-.bp-menu-end { right: 0; }
 .bp-menu-leaf { position: absolute; top: 0; left: 50%; width: 50%; height: 100%; z-index: var(--leaf-order); transform-origin: left center; transform-style: preserve-3d; transition: transform 1050ms cubic-bezier(.36,.02,.2,1); }
 .bp-menu-leaf.is-turned { transform: rotateY(-180deg); }
 .bp-menu-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #fff; }
@@ -64,7 +63,6 @@
   .bp-menu-book { aspect-ratio: 17 / 22; }
   .bp-menu-leaf { left: 0; width: 100%; }
   .bp-menu-leaf.is-turned:not(.is-turning) { visibility: hidden; }
-  .bp-menu-end { width: 100%; }
   .bp-menu-verso { display: none; }
   .bp-menu-modal { overflow-x: clip; }
   .bp-menu-controls { gap: 14px; }

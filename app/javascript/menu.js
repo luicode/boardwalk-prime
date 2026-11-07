@@ -7,7 +7,6 @@ function initMenu() {
   const previous = dialog.querySelector('[data-bp-menu-prev]');
   const next = dialog.querySelector('[data-bp-menu-next]');
   const status = dialog.querySelector('[data-bp-menu-status]');
-  const end = dialog.querySelector('[data-bp-menu-end]');
   const stage = dialog.querySelector('[data-bp-menu-stage]');
   let page = 0;
   let turning = false;
@@ -16,22 +15,21 @@ function initMenu() {
 
   function update() {
     previous.disabled = page === 0;
-    next.disabled = page === leaves.length;
+    next.disabled = page === leaves.length - 1;
     sections.forEach((button, index) => {
       if (index === page) button.setAttribute('aria-current', 'page');
       else button.removeAttribute('aria-current');
     });
     leaves.forEach((leaf, index) => { leaf.inert = index !== page; });
-    end.inert = page !== leaves.length;
     status.replaceChildren();
-    status.append(page === leaves.length ? 'BOARDWALK PRIME' : `${String(page + 1).padStart(2, '0')} / ${String(leaves.length).padStart(2, '0')}`);
+    status.append(`${String(page + 1).padStart(2, '0')} / ${String(leaves.length).padStart(2, '0')}`);
     const title = document.createElement('span');
-    title.textContent = leaves[page]?.dataset.title || 'An evening to remember';
+    title.textContent = leaves[page].dataset.title;
     status.append(title);
   }
 
   function turnTo(target) {
-    if (turning || target === page || target < 0 || target > leaves.length) return;
+    if (turning || target === page || target < 0 || target >= leaves.length) return;
     // Section shortcuts turn each intervening leaf, just like the bound menu.
     const forward = target > page;
     const index = forward ? page : page - 1;
@@ -57,7 +55,7 @@ function initMenu() {
   dialog.addEventListener('keydown', (event) => {
     if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey) return;
     event.preventDefault();
-    turnTo(event.key === 'Home' ? 0 : event.key === 'End' ? leaves.length : page + (event.key === 'ArrowRight' ? 1 : -1));
+    turnTo(event.key === 'Home' ? 0 : event.key === 'End' ? leaves.length - 1 : page + (event.key === 'ArrowRight' ? 1 : -1));
   });
   let start;
   stage.addEventListener('touchstart', (event) => {
