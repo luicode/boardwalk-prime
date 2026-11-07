@@ -3,6 +3,9 @@
   <head>
     <title>Boardwalk Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% if google_analytics_measurement_id %>
+      <meta name="bp-ga4-id" content="<%= google_analytics_measurement_id %>">
+    <% end %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -23,6 +26,6 @@
 
   <body class="bp-body">
     <%= yield %>
-
+    <%= render "shared/analytics_consent" if google_analytics_measurement_id %>
   </body>
 </html>

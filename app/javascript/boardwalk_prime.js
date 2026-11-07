@@ -136,9 +136,9 @@ function initEmailForm() {
 function initModals() {
   document.querySelectorAll("[data-bp-modal-open]").forEach((trigger) => {
     const dialog = document.getElementById(trigger.dataset.bpModalOpen);
-    if (!dialog || dialog.dataset.bpReady === "1") return;
+    if (!dialog || trigger.dataset.bpModalReady === "1") return;
 
-    dialog.dataset.bpReady = "1";
+    trigger.dataset.bpModalReady = "1";
     trigger.addEventListener("click", () => {
       const frame = dialog.querySelector("iframe[data-src]");
       if (frame && !frame.hasAttribute("src")) frame.src = frame.dataset.src;
@@ -146,6 +146,9 @@ function initModals() {
       dialog.scrollTop = 0;
       document.body.classList.add("bp-modal-open");
     });
+
+    if (dialog.dataset.bpReady === "1") return;
+    dialog.dataset.bpReady = "1";
 
     dialog.addEventListener("close", () => {
       document.body.classList.remove("bp-modal-open");

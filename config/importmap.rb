@@ -1,4 +1,5 @@
 pin "application"
+pin "analytics", to: "analytics.js"
 pin "boardwalk_prime", to: "boardwalk_prime.js"
 pin "menu", to: "menu.js"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
